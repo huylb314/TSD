@@ -79,11 +79,23 @@ We train the ResNext101-64x4d model with DCN and multi-scale training. Evaluatio
 ## Installation
 
 Please refer to [MMdetection](docs/INSTALL.md) for installation and dataset preparation.
+```shell
+git submodule update --init --recursive --remote
 
+cd detection
+pip install -r requirements/build.txt
+pip install -v -e .
+```
 
 ## Get Started
 ```shell
 ./tools/slurm_train.sh dev TSD configs/faster_rcnn_r152_fpn_TSD_1x.py exp/TSD_r152/ 16
+```
+
+Update all files and checkout to a specific branch (e.g., master):
+```shell
+git submodule foreach git pull origin master
+git submodule foreach git checkout master
 ```
 
 
